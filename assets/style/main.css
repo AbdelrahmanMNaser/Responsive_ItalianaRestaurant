@@ -1,0 +1,126 @@
+/* Base styles (mobile-first) */
+main {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0; /* Start with content hidden */
+  animation: fadeIn 1s forwards; /* Apply fadeIn animation */
+}
+
+.Intro {
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0; /* Start with content hidden */
+  animation: fadeIn 1s 0.5s forwards; /* Apply fadeIn animation with delay */
+}
+
+.Intro h2 {
+  color: #e01818;
+}
+
+.Intro-description {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333;
+}
+
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #251919;
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+.row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  margin: 10px;
+  padding: 20px;
+  width: 100%; /* Full width on smaller screens */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; 
+  opacity: 0; /* Start with content hidden */
+  animation: fadeIn 1s 1s forwards; /* Apply fadeIn animation with delay */
+}
+
+.col h3 {
+  font-size: 1em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.col img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media query for tablets (min-width: 768px) */
+@media screen and (min-width: 768px) {
+  .Intro h2 {
+    font-size: 2em;
+  }
+
+
+  .Intro-description {
+    font-size: 1.4em;
+  }
+
+  .col {
+    width: calc(50% - 20px); /* Two columns layout */
+  }
+
+  .col h3 {
+    font-size: 1.5em;
+  }
+}
+
+/* Media query for desktops (min-width: 992px) */
+@media screen and (min-width: 992px) {
+  .Intro h2 {
+    font-size: 3.2em;
+  }
+
+  main h1 {
+    font-size: 3.2rem;
+  }
+
+  .Intro-description {
+    font-size: 1.5em;
+  }
+
+  .col {
+    width: calc(33.333% - 20px); /* Three columns layout */
+    box-sizing: border-box;
+  }
+
+  .col h2 {
+    font-size: 2em;
+  }
+
+  .col h3 {
+    font-size: 2em;
+  }
+}

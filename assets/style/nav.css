@@ -1,0 +1,138 @@
+/* Base styles for the navigation bar (mobile-first) */
+
+header {
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.5em;
+  display: inline-block;
+  color: forestgreen;
+}
+
+header i {
+  font-size: 1.5em;
+  color: #f00;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+nav ul {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 20;
+}
+
+nav ul.active {
+  left: 0;
+}
+
+nav ul li {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 1rem 1.5rem;
+  margin-left: 75px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: forestgreen;
+}
+
+/* Toggle button for mobile menu */
+.menu-toggle {
+  display: block;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Overlay for the menu */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Media query for screen widths 769px and above (even larger devices) */
+@media screen and (min-width: 769px) {
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  header i {
+    font-size: 3em;
+  }
+
+
+  nav ul {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  nav ul li {
+    margin-right: 1rem;
+    padding: 0;
+
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+  
+}
